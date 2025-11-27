@@ -1,0 +1,136 @@
+# Socrepho Web - Cursor Rules
+
+## Project Overview
+This is a simple, professional website for Socrepho - a mobile app development company.
+Technology: Vanilla HTML5, CSS3, JavaScript (no frameworks)
+
+---
+
+## File Structure Rules
+
+### Directory Organization
+```
+socrpeho_web/
+├── index.html          # Main HTML file
+├── css/
+│   └── styles.css      # All styles (single file)
+├── js/
+│   └── main.js         # All JavaScript (single file)
+├── assets/
+│   └── images/         # Image files
+├── .cursorrules        # This file
+└── README.md           # Documentation
+```
+
+### Naming Conventions
+- Files: `kebab-case.ext` (e.g., `about-page.html`)
+- CSS classes: `kebab-case` (e.g., `.hero-title`)
+- JS variables/functions: `camelCase` (e.g., `handleScroll`)
+- CSS variables: `--kebab-case` (e.g., `--color-primary`)
+
+---
+
+## HTML Rules
+
+1. Use semantic HTML5 elements (`<nav>`, `<section>`, `<article>`, `<footer>`)
+2. Always include `lang="en"` attribute on `<html>`
+3. Include meta viewport for responsive design
+4. Keep structure simple and readable
+5. Use meaningful class names that describe purpose
+
+---
+
+## CSS Rules
+
+### Organization
+1. CSS variables are defined in `:root` at the top
+2. Sections are organized with comment headers
+3. Mobile-first or desktop-first (currently desktop-first)
+
+### Best Practices
+1. Use CSS variables for colors, spacing, typography
+2. Use `rem` for font sizes, `px` for borders/shadows
+3. Keep specificity low - avoid deep nesting
+4. Group related properties together
+
+### Section Order in CSS:
+1. Variables (`:root`)
+2. Reset & Base styles
+3. Layout (Container, Grid)
+4. Components (Navbar, Buttons, Cards)
+5. Sections (Hero, Services, Work, About, Contact, Footer)
+6. Animations
+7. Responsive (Media Queries at bottom)
+
+---
+
+## JavaScript Rules
+
+1. Keep JavaScript minimal - only for necessary interactivity
+2. Use `const` and `let`, never `var`
+3. Use modern ES6+ syntax (arrow functions, template literals)
+4. Add comments for each major section/function
+5. Wrap in `DOMContentLoaded` event listener
+
+---
+
+## Markdown/Documentation Rules
+
+### README.md
+- Keep documentation concise and practical
+- Include file structure diagram
+- Document how to run/preview the site
+- List any dependencies or requirements
+
+### Comments
+- HTML: Use `<!-- Comment -->` for section markers
+- CSS: Use `/* Comment */` for section headers
+- JS: Use `//` for single line, `/* */` for multi-line
+
+---
+
+## DO NOT
+
+- ❌ Add unnecessary frameworks or libraries
+- ❌ Create complex build processes
+- ❌ Over-engineer simple features
+- ❌ Add features not explicitly requested
+- ❌ Change existing design without permission
+- ❌ Create multiple CSS/JS files unless necessary
+
+---
+
+## DO
+
+- ✅ Keep code simple and readable
+- ✅ Use semantic HTML
+- ✅ Maintain consistent naming
+- ✅ Add helpful comments
+- ✅ Test on different screen sizes
+- ✅ Optimize images before adding
+
+---
+
+## Quick Reference
+
+### Color Palette (CSS Variables)
+```css
+--color-bg-primary: #0a0a0f      /* Main background */
+--color-accent-primary: #6366f1   /* Primary accent (indigo) */
+--color-accent-secondary: #8b5cf6 /* Secondary accent (purple) */
+--color-text-primary: #ffffff     /* Main text */
+--color-text-secondary: #a0a0b0   /* Muted text */
+```
+
+### Font Families
+```css
+--font-primary: 'Sora'       /* Headings and body */
+--font-mono: 'Space Mono'    /* Code blocks */
+```
+
+### Breakpoints
+```css
+768px  /* Tablet */
+480px  /* Mobile */
+```
+
