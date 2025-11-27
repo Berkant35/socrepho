@@ -195,11 +195,68 @@
                         Ready to start your next mobile project? We'd love to hear from you.
                     </p>
                 </div>
-                <div class="contact-cta">
-                    <a href="mailto:info@socrepho.com" class="btn btn-primary btn-large">
-                        info@socrepho.com
-                    </a>
-                </div>
+                
+                <!-- Contact Form -->
+                <form 
+                    action="https://formspree.io/f/xpwgrgeq" 
+                    method="POST" 
+                    class="contact-form"
+                >
+                    <!-- Honeypot spam protection -->
+                    <input type="text" name="_gotcha" style="display:none">
+                    
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input 
+                            type="text" 
+                            id="name" 
+                            name="name" 
+                            placeholder="Your name"
+                            required
+                        >
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            placeholder="your@email.com"
+                            required
+                        >
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="project">Project Type</label>
+                        <select id="project" name="project" required>
+                            <option value="" disabled selected>Select project type</option>
+                            <option value="mobile-app">Mobile App Development</option>
+                            <option value="ui-ux">UI/UX Design</option>
+                            <option value="consulting">Consulting</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea 
+                            id="message" 
+                            name="message" 
+                            rows="5" 
+                            placeholder="Tell us about your project..."
+                            required
+                        ></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-large">
+                        Send Message
+                    </button>
+                </form>
+                
+                <p class="contact-alt">
+                    Or email us directly at <a href="mailto:info@socrepho.com">info@socrepho.com</a>
+                </p>
             </div>
         </div>
     </section>
