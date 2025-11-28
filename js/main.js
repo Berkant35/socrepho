@@ -66,5 +66,12 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // ===========================================
+    // Contact Form - Normal Submit (Test Mode)
+    // ===========================================
+    // Form will submit normally to Web3Forms
+    // After testing, we can add AJAX back
 });
+
 
