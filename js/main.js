@@ -68,10 +68,57 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ===========================================
-    // Contact Form - Normal Submit (Test Mode)
+    // Contact Form - AJAX Submit
     // ===========================================
-    // Form will submit normally to Web3Forms
-    // After testing, we can add AJAX back
+    const contactForm = document.getElementById('contact-form');
+    const submitBtn = document.getElementById('submit-btn');
+    const btnText = submitBtn?.querySelector('.btn-text');
+    const btnLoading = submitBtn?.querySelector('.btn-loading');
+    const successMessage = document.getElementById('form-success');
+    const errorMessage = document.getElementById('form-error');
+
+    if (contactForm) {
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            // Show loading state
+            if (btnText) btnText.style.display = 'none';
+            if (btnLoading) btnLoading.style.display = 'inline-flex';
+            submitBtn.disabled = true;
+            
+            // Hide previous messages
+            if (successMessage) successMessage.style.display = 'none';
+            if (errorMessage) errorMessage.style.display = 'none';
+            
+            try {
+                const formData = new FormData(contactForm);
+                
+                const response = await fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    // Show success message
+                    if (successMessage) successMessage.style.display = 'block';
+                    contactForm.reset();
+                } else {
+                    // Show error message
+                    if (errorMessage) errorMessage.style.display = 'block';
+                }
+            } catch (error) {
+                console.error('Form submission error:', error);
+                if (errorMessage) errorMessage.style.display = 'block';
+            } finally {
+                // Reset button state
+                if (btnText) btnText.style.display = 'inline';
+                if (btnLoading) btnLoading.style.display = 'none';
+                submitBtn.disabled = false;
+            }
+        });
+    }
 });
 
 
